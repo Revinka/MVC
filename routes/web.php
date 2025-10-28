@@ -58,3 +58,15 @@ Route::patch('/produk/update-harga', function (Request $request) {
     return "Harga produk berhasil diperbarui menjadi <b>Rp$hargaBaru</b> 
 (tanpa mengubah data lain)."; 
 }); 
+
+Route::get('/profil/{nama}', function ($nama) { 
+    return "Halo, ini adalah profil milik: <b>$nama</b>"; 
+    }); 
+
+    Route::get('/produk/{kategori}/{id}', function ($kategori, $id) { 
+        return "Kategori: <b>$kategori</b> <br> ID Produk: <b>$id</b>"; 
+        }); 
+
+        Route::get('/profil/{nama}', function ($nama) { 
+            return view('profil', ['nama' => $nama]); 
+            }); 
